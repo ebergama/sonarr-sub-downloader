@@ -15,10 +15,17 @@ Behind the scenes, it uses [subliminal](3) as subtitle downloader engine.
 4. Choose a name for your script, recommended: "Subs Downloader"
 5. Enable only "On Download"
 6. Choose the path in which the script `sub-downloader` has been cloned.
-7. The script requires 2 arguments, the first one is the location of the log file and the second one is the language for the subtitles, for example: `/home/pi/sub.log es`
+7. The script requires 1 argument, a comma-separated language list for the subtitles to download, 
+   for example, for download English and Spanish subtitles: `-l es,en`
 8. How the configuration should look like
 
 ![alt example](https://raw.githubusercontent.com/ebergama/sonarr-sub-downloader/master/example/example.png)
+
+# How to update to the latest version
+```bash
+git checkout master
+git pull --rebase
+```
 
 [1]: https://github.com/Sonarr/Sonarr
 [2]: https://github.com/Sonarr/Sonarr/wiki/Custom-Post-Processing-Scripts
