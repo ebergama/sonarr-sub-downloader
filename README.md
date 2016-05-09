@@ -2,11 +2,11 @@
 Sonarr custom post processor script for handling subtitle download.
 
 # Summary
-This bash script works perfectly as a [Custom Post Processor Script](2) for [Sonarr](1).
-Behind the scenes, it uses [subliminal](3) as subtitle downloader engine.
+This bash script works perfectly as a [Custom Post Processor Script][2] for [Sonarr][1].
+Behind the scenes, it uses [subliminal][3] as subtitle downloader engine.
 
 # Prerequisites
-- Install the [subliminal plugin](3) 
+- Install the [subliminal plugin][3]
 
 # How to setup
 1. `git clone https://github.com/ebergama/sonarr-sub-downloader.git`
