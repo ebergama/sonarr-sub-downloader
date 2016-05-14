@@ -2,13 +2,17 @@
 Sonarr custom post processor script for handling subtitle download.
 
 # Summary
-This bash script works perfectly as a [Custom Post Processor Script](2) for [Sonarr](1).
+This project contains 2 main bash scripts for handling Sonarr subtitle download after a TV show has been downloaded.
+
+The script [sub-downloader.sh](sub-downloader.sh) works perfectly as a [Custom Post Processor Script](2) for [Sonarr](1).
+
+The script [search-wanted.sh](wanted/search-wanted.sh)`` looks for those subtitles that were not found in previous executions of the first one.
 Behind the scenes, it uses [subliminal](3) as subtitle downloader engine.
 
 # Prerequisites
 - Install the [subliminal plugin](3) 
 
-# How to setup
+# How to setup the script in Sonarr
 1. `git clone https://github.com/ebergama/sonarr-sub-downloader.git`
 2. Open Sonarr, go to: `<your-sonar-host>:<port>/settings/connect`
 3. Click in the '+' => Custom Script
@@ -21,10 +25,14 @@ Behind the scenes, it uses [subliminal](3) as subtitle downloader engine.
 
 ![alt example](https://raw.githubusercontent.com/ebergama/sonarr-sub-downloader/master/example/example.png)
 
-# How to update to the latest version
+# How to enable the not found searcher to run periodically
+- Run [the installation script](wanted/install.sh) 
 ```bash
-git checkout master
-git pull --rebase
+./wanted/install.sh
+````
+- Check that the crontab has been setup correctly
+```bash
+crontab -l
 ```
 
 [1]: https://github.com/Sonarr/Sonarr
