@@ -43,6 +43,11 @@ Behind the scenes, both scripts uses [subliminal](3) as subtitle downloader engi
 
          crontab -l
 
+# License
+MIT
+
+# Developer Information
+Ezequiel Bergamaschi - ezequielbergamaschi@gmail.com
 
 [1]: https://github.com/Sonarr/Sonarr
 [2]: https://github.com/Sonarr/Sonarr/wiki/Custom-Post-Processing-Scripts
