@@ -20,11 +20,10 @@ Behind the scenes, both scripts uses [subliminal](3) as subtitle downloader engi
 # How to setup the script in Sonarr
 1. Download the [latest][4] release (zip or tar.gz) file.
 2. Uncompress the file
-```bash
-unzip sonarr-sub-downloader-0.1.zip
-# or
-tar -xvf sonarr-sub-downloader-0.1.tar.gz
-```
+
+         unzip sonarr-sub-downloader-0.1.zip
+         # or
+         tar -xvf sonarr-sub-downloader-0.1.tar.gz
 3. Open Sonarr, go to: `<your-sonar-host>:<port>/settings/connect`
 4. Click in the '+' => Custom Script
 5. Choose a name for your script, recommended: "Subs Downloader"
@@ -37,14 +36,13 @@ tar -xvf sonarr-sub-downloader-0.1.tar.gz
 ![alt example](https://raw.githubusercontent.com/ebergama/sonarr-sub-downloader/master/example/example.png)
 
 # How to enable the not found searcher to run periodically
-- Run [the installation script](wanted/install.sh) 
-```bash
-./wanted/install.sh
-````
-- Check that the crontab has been setup correctly
-```bash
-crontab -l
-```
+1. Run [the installation script](wanted/install.sh) 
+         
+         ./wanted/install.sh
+2. Check that the crontab has been setup correctly
+
+         crontab -l
+
 
 [1]: https://github.com/Sonarr/Sonarr
 [2]: https://github.com/Sonarr/Sonarr/wiki/Custom-Post-Processing-Scripts
