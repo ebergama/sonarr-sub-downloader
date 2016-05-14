@@ -6,8 +6,9 @@ This project contains 2 main bash scripts for handling Sonarr subtitle download 
 
 The script [sub-downloader.sh](sub-downloader.sh) works perfectly as a [Custom Post Processor Script](2) for [Sonarr](1).
 
-The script [search-wanted.sh](wanted/search-wanted.sh)`` looks for those subtitles that were not found in previous executions of the first one.
-Behind the scenes, it uses [subliminal](3) as subtitle downloader engine.
+The script [search-wanted.sh](wanted/search-wanted.sh)` looks for those subtitles that were not found in previous executions of the first one.
+
+Behind the scenes, both scripts uses [subliminal](3) as subtitle downloader engine.
 
 # Prerequisites
 - Install the [subliminal plugin](3) 
