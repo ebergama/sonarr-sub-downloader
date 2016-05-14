@@ -1,8 +1,9 @@
 #!/bin/bash
 set -e
-
+echo `dirname $0`
 declare LOG_FILE=`dirname $0`/sub-downloader.log
-echo $LOG_FILE
+declare WANTED_FILE=`dirname $0`/wanted/subs.wanted
+
 # Sonarr does not show the stdout as part of the log information displayed by the system,
 # So I decided to store the log information by my own.
 function doLog {
@@ -48,13 +49,17 @@ fi
 
 doLog "Looking for subtitles for: ${EPISODE_PATH}"
 
-declare SUBTITLE_FILE=`echo ${EPISODE_PATH} | sed "s/\(mkv\|mp4\)/es\.srt/g"`
-doLog "Looking for the subtitle file: ${SUBTITLE_FILE}"
+doLog "Executing subliminal"
+doLog "subliminal download ${LANGUAGES} ${EPISODE_PATH}"
+subliminal download ${LANGUAGES} "${EPISODE_PATH}" >> $LOG_FILE 2>&1
+  
+# Look for not found subtitles
+declare LANG_ARRAY=($(echo ${LANGUAGES} | sed "s/-l //g"))
 
-if [ ! -f "${SUBTITLE_FILE}" ]; then
-  doLog "Subtitle not found, executing subliminal"
-  echo $LOG_FILE
-  subliminal download ${LANGUAGES} "${EPISODE_PATH}" >> $LOG_FILE 2>&1
-else
-  doLog "Subtitle exists" 
-fi
+for LANG in "${LANG_ARRAY[@]}"; do
+  SUB_FILE=$(echo $EPISODE_PATH | sed "s/...$/${LANG}\.srt/g")
+  if [[ ! -f $SUB_FILE ]]; then
+    doLog "Subtitle ${SUB_FILE} not found, adding it to wanted"
+    echo $EPISODE_PATH:$SUB_FILE >> ${WANTED_FILE}
+  fi
+done
