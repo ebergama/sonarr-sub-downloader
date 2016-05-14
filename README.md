@@ -2,7 +2,6 @@
 Sonarr custom post processor script for handling subtitle download.
 
 # Summary
-<<<<<<< HEAD
 This project contains 2 main bash scripts for handling Sonarr subtitle download after a TV show has been downloaded.
 
 The script [sub-downloader.sh](sub-downloader.sh) works perfectly as a [Custom Post Processor Script](2) for [Sonarr](1).
@@ -10,10 +9,6 @@ The script [sub-downloader.sh](sub-downloader.sh) works perfectly as a [Custom P
 The script [search-wanted.sh](wanted/search-wanted.sh)` looks for those subtitles that were not found in previous executions of the first one.
 
 Behind the scenes, both scripts uses [subliminal](3) as subtitle downloader engine.
-=======
-This bash script works perfectly as a [Custom Post Processor Script][2] for [Sonarr][1].
-Behind the scenes, it uses [subliminal][3] as subtitle downloader engine.
->>>>>>> origin/master
 
 # Prerequisites
 - Install the [subliminal plugin][3]
@@ -22,7 +17,6 @@ Behind the scenes, it uses [subliminal][3] as subtitle downloader engine.
    sudo pip install -U subliminal
    ```
 
-<<<<<<< HEAD
 # How to setup the script in Sonarr
 1. Download the [latest][4] release (zip or tar.gz) file.
 2. Uncompress the file
