@@ -3,7 +3,7 @@
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo $SCRIPT_PATH
 function readHours {
-  read -p "How ofter would you like to check for missed subtitles? (hours) " HOURS
+  read -p "How often would you like to check for missed subtitles? (hours) " HOURS
   if [[ $HOURS -gt 23 ]]; then
     echo "Hour should be a value between 0 and 23"
     readHours
