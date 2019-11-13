@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 echo `dirname $0`
-declare LOG_FILE=`dirname $0`/sub-downloader.log
-declare WANTED_FILE=`dirname $0`/wanted/subs.wanted
+declare LOG_FILE=~/logs/sonarr-sub-downloader/sub-downloader.log
+declare WANTED_FILE=~/logs/sonarr-sub-downloade/wanted-subs.log
 
 # Sonarr does not show the stdout as part of the log information displayed by the system,
 # So I decided to store the log information by my own.
