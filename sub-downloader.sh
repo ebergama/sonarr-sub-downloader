@@ -61,7 +61,7 @@ subliminal download ${LANGUAGES} "${VIDEO_PATH}" >> $LOG_FILE 2>&1
 declare LANG_ARRAY=($(echo ${LANGUAGES} | sed "s/-l //g"))
 
 for LANG in "${LANG_ARRAY[@]}"; do
-  SUB_FILE="${VIDEO_PATH}.${LANG}.srt"
+  SUB_FILE="${VIDEO_PATH%.*}.${LANG}.srt"
   if [[ ! -f $SUB_FILE ]]; then
     doLog "Subtitle ${SUB_FILE} not found, adding it to wanted"
     echo $VIDEO_PATH:$SUB_FILE >> ${WANTED_FILE}
