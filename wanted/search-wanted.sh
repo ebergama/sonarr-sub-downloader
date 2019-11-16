@@ -3,7 +3,9 @@
 declare WANTED_FILE=`dirname $0`/subs.wanted
 
 declare MISSED=""
+echo "#########################################"
 echo "###### Process started at: $(date) ######"
+echo "#########################################"
 
 while IFS=':' read -a line; do
   SOURCE=${line[0]}
