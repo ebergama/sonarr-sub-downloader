@@ -43,7 +43,7 @@ doLog "###### Process started at: $(date) ######"
 declare VIDEO_PATH=${sonarr_episodefile_path}
 if [[ -z $VIDEO_PATH ]]; then
   doLog "Sonarr sonarr_episodefile_path not found. Maybe a Radarr movie?"
-  VIDEO_PATH=${radarr_movie_path}
+  VIDEO_PATH=${radarr_moviefile_path}
 fi
 
 if [[ -z $VIDEO_PATH ]]; then
